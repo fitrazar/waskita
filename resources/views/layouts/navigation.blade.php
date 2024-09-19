@@ -64,7 +64,64 @@
                     <span>Kontak</span>
                 </a>
             </li>
+            <li class="mb-2">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        this.closest('form').submit();"
+                        class="flex items-center space-x-2 text-white hover:text-primary-yellow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2 8h20M2 12h20M2 16h20" />
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+
+                </form>
+            </li>
         @else
+            <li class="mb-2">
+                <a href="{{ route('material') }}" class="flex items-center space-x-2 text-white hover:text-primary-yellow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8h20M2 12h20M2 16h20" />
+                    </svg>
+                    <span>Materi</span>
+                </a>
+            </li>
+            <li class="mb-2">
+                <a href="{{ route('quiz') }}" class="flex items-center space-x-2 text-white hover:text-primary-yellow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 3h14M12 12v6m0-6v-6m0 0H7m5 0h5" />
+                    </svg>
+                    <span>Quiz</span>
+                </a>
+            </li>
+            <li class="mb-2">
+                <a href="{{ route('video') }}" class="flex items-center space-x-2 text-white hover:text-primary-yellow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 10l4.55 2.27M9 10L4.45 7.73M9 10l6 3v6M9 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4v2h6V5h4a2 2 0 012 2v12a2 2 0 01-2 2h-4v-6l-6-3z" />
+                    </svg>
+                    <span>Video Edukasi</span>
+                </a>
+            </li>
+            <li class="mb-2">
+                <a href="{{ route('contact') }}"
+                    class="flex items-center space-x-2 text-white hover:text-primary-yellow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2 8h20M2 12h20M2 16h20" />
+                    </svg>
+                    <span>Kontak</span>
+                </a>
+            </li>
         @endauth
 
 
@@ -76,4 +133,67 @@
         <i class="fa-solid fa-house" class="h-5 w-5"></i>
         <span class="btm-nav-label text-xs">Dashboard</span>
     </a>
+    @auth
+        <a href="{{ route('admin.material.index') }}" class="{{ Request::is('admin/material') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3M4 4h16v16H4z" />
+            </svg>
+            <span class="btm-nav-label text-xs">Materi</span>
+        </a>
+        <a href="{{ route('admin.quiz.index') }}" class="{{ Request::is('admin/quiz') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 3h14M12 12v6m0-6v-6m0 0H7m5 0h5" />
+            </svg>
+            <span class="btm-nav-label text-xs">Quiz</span>
+        </a>
+        <a href="{{ route('admin.video.index') }}" class="{{ Request::is('admin/video') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 10l4.55 2.27M9 10L4.45 7.73M9 10l6 3v6M9 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4v2h6V5h4a2 2 0 012 2v12a2 2 0 01-2 2h-4v-6l-6-3z" />
+            </svg>
+            <span class="btm-nav-label text-xs">Video Edukasi</span>
+        </a>
+        <a href="{{ route('admin.contact.index') }}" class="{{ Request::is('admin/contact') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8h20M2 12h20M2 16h20" />
+            </svg>
+            <span class="btm-nav-label text-xs">Kontak</span>
+        </a>
+    @else
+        <a href="{{ route('material') }}" class="{{ Request::is('material') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3M4 4h16v16H4z" />
+            </svg>
+            <span class="btm-nav-label text-xs">Materi</span>
+        </a>
+        <a href="{{ route('quiz') }}" class="{{ Request::is('quiz') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 3h14M12 12v6m0-6v-6m0 0H7m5 0h5" />
+            </svg>
+            <span class="btm-nav-label text-xs">Quiz</span>
+        </a>
+        <a href="{{ route('video') }}" class="{{ Request::is('video') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 10l4.55 2.27M9 10L4.45 7.73M9 10l6 3v6M9 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4v2h6V5h4a2 2 0 012 2v12a2 2 0 01-2 2h-4v-6l-6-3z" />
+            </svg>
+            <span class="btm-nav-label text-xs">Video Edukasi</span>
+        </a>
+        <a href="{{ route('contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8h20M2 12h20M2 16h20" />
+            </svg>
+            <span class="btm-nav-label text-xs">Kontak</span>
+        </a>
+    @endauth
 </div>

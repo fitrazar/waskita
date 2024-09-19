@@ -9,7 +9,6 @@
                 </svg>
             </div>
             <x-input.text-input type="text" class="grow border-0" id="search" placeholder="Jelajahi Halaman..." />
-            <x-button.primary-button id="search-btn" name="Cari" />
         </x-input.input-label>
         <div class="flex items-center">
             <div class="avatar">
@@ -55,8 +54,6 @@
                 </div>
             </div>
 
-
-
             <!-- Video Section -->
             <div class="flex justify-between items-center pt-16">
                 <div class="flex items-center justify-start">
@@ -82,6 +79,8 @@
     <x-slot name="script">
         <script>
             $(document).ready(function() {
+                let debounceTimer;
+
                 loadMaterials();
                 loadVideos();
 
@@ -90,9 +89,13 @@
                     loadMaterials(type);
                 });
 
-                $('#search-btn').on('click', function() {
-                    const searchQuery = $('#search').val();
-                    searchContent(searchQuery);
+                $('#search').on('input', function() {
+                    clearTimeout(debounceTimer);
+                    const searchQuery = $(this).val();
+
+                    debounceTimer = setTimeout(() => {
+                        searchContent(searchQuery);
+                    }, 500); // Delay 500ms
                 });
 
                 function loadMaterials(type = '', page = 1) {
