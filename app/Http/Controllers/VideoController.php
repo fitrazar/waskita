@@ -16,7 +16,7 @@ class VideoController extends Controller
                 $query->where('title', 'like', '%' . $search . '%');
             }
         })
-            ->paginate(6);
+            ->latest()->paginate(6);
 
         return view('video', compact('videos', 'search'));
     }

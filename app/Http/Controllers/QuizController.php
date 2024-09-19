@@ -11,7 +11,7 @@ class QuizController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $quizzes = Quiz::all();
+            $quizzes = Quiz::latest()->get();
 
             return DataTables::of($quizzes)->make();
         }
