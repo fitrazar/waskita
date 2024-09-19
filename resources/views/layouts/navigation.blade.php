@@ -129,19 +129,21 @@
 </div>
 
 <div class="btm-nav lg:hidden shadow-sm z-10 bg-primary-red text-white">
-    <a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}">
+    <a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard') ? 'bg-primary-yellow text-black' : '' }}">
         <i class="fa-solid fa-house" class="h-5 w-5"></i>
         <span class="btm-nav-label text-xs">Dashboard</span>
     </a>
     @auth
-        <a href="{{ route('admin.material.index') }}" class="{{ Request::is('admin/material') ? 'active' : '' }}">
+        <a href="{{ route('admin.material.index') }}"
+            class="{{ Request::is('admin/material') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3M4 4h16v16H4z" />
             </svg>
             <span class="btm-nav-label text-xs">Materi</span>
         </a>
-        <a href="{{ route('admin.quiz.index') }}" class="{{ Request::is('admin/quiz') ? 'active' : '' }}">
+        <a href="{{ route('admin.quiz.index') }}"
+            class="{{ Request::is('admin/quiz') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -149,7 +151,8 @@
             </svg>
             <span class="btm-nav-label text-xs">Quiz</span>
         </a>
-        <a href="{{ route('admin.video.index') }}" class="{{ Request::is('admin/video') ? 'active' : '' }}">
+        <a href="{{ route('admin.video.index') }}"
+            class="{{ Request::is('admin/video') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -157,7 +160,8 @@
             </svg>
             <span class="btm-nav-label text-xs">Video Edukasi</span>
         </a>
-        <a href="{{ route('admin.contact.index') }}" class="{{ Request::is('admin/contact') ? 'active' : '' }}">
+        <a href="{{ route('admin.contact.index') }}"
+            class="{{ Request::is('admin/contact') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8h20M2 12h20M2 16h20" />
@@ -165,14 +169,14 @@
             <span class="btm-nav-label text-xs">Kontak</span>
         </a>
     @else
-        <a href="{{ route('material') }}" class="{{ Request::is('material') ? 'active' : '' }}">
+        <a href="{{ route('material') }}" class="{{ Request::is('material') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3M4 4h16v16H4z" />
             </svg>
             <span class="btm-nav-label text-xs">Materi</span>
         </a>
-        <a href="{{ route('quiz') }}" class="{{ Request::is('quiz') ? 'active' : '' }}">
+        <a href="{{ route('quiz') }}" class="{{ Request::is('quiz') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -180,7 +184,7 @@
             </svg>
             <span class="btm-nav-label text-xs">Quiz</span>
         </a>
-        <a href="{{ route('video') }}" class="{{ Request::is('video') ? 'active' : '' }}">
+        <a href="{{ route('video') }}" class="{{ Request::is('video') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -188,7 +192,7 @@
             </svg>
             <span class="btm-nav-label text-xs">Video Edukasi</span>
         </a>
-        <a href="{{ route('contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">
+        <a href="{{ route('contact') }}" class="{{ Request::is('contact') ? 'bg-primary-yellow text-black' : '' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8h20M2 12h20M2 16h20" />
